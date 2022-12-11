@@ -14,11 +14,23 @@ head {
 div {
 
     background-color: black;
-    color: black;
+    color: rgb(177, 0, 0);
 }
 
-script {
 
-    background-color: black;
-    color: black;
+
+
+
+#btn {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexMain {
+
+    display: flex;
+    flex-direction: column;
 }

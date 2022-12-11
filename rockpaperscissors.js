@@ -41,7 +41,9 @@ scissorsButton.addEventListener('click', () => {
 
 
 const resultsDisplay = document.querySelector('#results');
-resultsDisplay.textContent = ''
+
+const scoreTally = document.querySelector('#score');
+
 
 
 
@@ -222,7 +224,7 @@ function oneRound(computerChoice, playerChoice)
 
 
 
-/*function Game()
+function Game()
 {
     let Winner = "no one";
     computerScore = 0;
@@ -269,7 +271,7 @@ function oneRound(computerChoice, playerChoice)
 
     
 
-} */
+} 
 
 
 
