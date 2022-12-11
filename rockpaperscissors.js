@@ -39,6 +39,15 @@ scissorsButton.addEventListener('click', () => {
 
 
 
+
+const resultsDisplay = document.querySelector('#results');
+resultsDisplay.textContent = ''
+
+
+
+
+
+
 function getWinner()
 {
 
@@ -116,6 +125,8 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 1;
         playerWins = 0;
 
+
+        resultsDisplay.textContent = "Computer wins! Paper beats rock!";
         return "Computer wins! Paper beats rock!";
 
 
@@ -127,6 +138,7 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 0;
         playerWins = 1;
 
+        resultsDisplay.textContent = "You win! Rock beats scissors!";
         return "You win! Rock beats scissors!";
 
     }
@@ -136,6 +148,7 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 0;
         playerWins = 0;
 
+        resultsDisplay.textContent = "Tie";
         return "Tie";
 
    
@@ -144,6 +157,8 @@ function oneRound(computerChoice, playerChoice)
     {
         computerWins = 1;
         playerWins = 0;
+
+        resultsDisplay.textContent = "Computer wins! Scissors beats paper!";
         return "Computer wins! Scissors beats paper!";
 
 
@@ -154,6 +169,7 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 0;
         playerWins = 1;
 
+        resultsDisplay.textContent = "You win! Paper beats rock!";
         return "You win! Paper beats rock!";
 
   
@@ -162,6 +178,8 @@ function oneRound(computerChoice, playerChoice)
     {
         computerWins = 0;
         playerWins = 0;
+
+        resultsDisplay.textContent = "Tie!";
         return "Tie";
     }
     else if (playerChoice == scissors && computerChoice == paper)
@@ -169,6 +187,7 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 0;
         playerWins = 1;
 
+        resultsDisplay.textContent = "You win! Scissors beats paper!";
         return "You win! Scissors beats paper!";
 
     }
@@ -178,6 +197,7 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 1;
         playerWins = 0;
 
+        resultsDisplay.textContent = "Computer wins! Rock beats scissors!";
         return "Computer wins! Rock beats scissors!";
   
     }
@@ -186,12 +206,13 @@ function oneRound(computerChoice, playerChoice)
         computerWins = 0;
         playerWins = 0;
 
+        resultsDisplay.textContent = "Tie!";
         return "Tie";
     }
     else
 
 
-
+    resultsDisplay.textContent = "ERROR";
     return "Error";
 }
 
