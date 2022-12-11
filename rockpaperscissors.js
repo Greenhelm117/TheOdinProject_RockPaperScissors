@@ -16,8 +16,8 @@ const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
 
-playerScore = 0;
-computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 const rockButton = document.querySelector('#rock');
 rockButton.addEventListener('click', () => {
@@ -46,6 +46,8 @@ scissorsButton.addEventListener('click', () => {
 const resultsDisplay = document.querySelector('#results');
 
 const scoreTally = document.querySelector('#score');
+
+const winnerDisplay = document.querySelector(".winner");
 
 
 
@@ -99,13 +101,22 @@ function getPlayerChoice()
 }
 
 
+function resetGame() {
+
+    computerScore = 0;
+    playerScore = 0;
+
+    scoreTally.textContent = playerScore + " vs " + computerScore ;
+
+}
+
+
 function oneRound(computerChoice, playerChoice)
 {
     //let theWinner;
 
     computerChoice = getComputerChoice();
     //playerChoice = getPlayerChoice();
-
 
 
    /* if (playerChoice = rock && computerChoice == rock)
@@ -125,10 +136,34 @@ function oneRound(computerChoice, playerChoice)
     //console.log(computerChoice);
 
 
-    if(playerScore == 5 || computerScore == 5)
+    winnerDisplay.textContent = " ";
+
+
+    if(playerScore >= 5)
     {
-        scoreTally.textContent = playerScore + " vs " + computerScore ;
+        winnerDisplay.textContent = "WINNER IS NOT YOU!!!!!!!!";
+        resetGame();
+
+
     }
+    else if(computerScore >= 5)
+    {
+        winnerDisplay.textContent = "WINNER IS NOT YOU!!!!!!!!";
+        resetGame();
+
+
+    }  
+
+
+
+
+
+
+
+
+
+
+
 
     if (playerChoice == rock && computerChoice == paper)
     {
@@ -222,6 +257,9 @@ function oneRound(computerChoice, playerChoice)
 
     resultsDisplay.textContent = "ERROR";
     return "Error";
+
+
+    
 }
 
 
