@@ -16,7 +16,26 @@ const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
 
+const rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', () => {
 
+    oneRound(getComputerChoice(), rock);
+
+})
+
+const paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', () => {
+
+    oneRound(getComputerChoice(), paper);
+
+})
+
+const scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', () => {
+
+    oneRound(getComputerChoice(), scissors);
+
+})
 
 
 
@@ -71,7 +90,7 @@ function oneRound(computerChoice, playerChoice)
     //let theWinner;
 
     computerChoice = getComputerChoice();
-    playerChoice = getPlayerChoice();
+    //playerChoice = getPlayerChoice();
 
     computerWins = 0;
     playerWins = 0;
@@ -177,6 +196,11 @@ function oneRound(computerChoice, playerChoice)
 }
 
 
+
+
+
+
+
 /*function Game()
 {
     let Winner = "no one";
@@ -228,7 +252,7 @@ function oneRound(computerChoice, playerChoice)
 
 
 
-console.log(Game());
+//console.log(Game());
 
 //console.log(getPlayerChoice())
 //console.log(getComputerChoice())
