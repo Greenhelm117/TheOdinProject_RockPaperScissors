@@ -16,6 +16,9 @@ const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
 
+playerScore = 0;
+computerScore = 0;
+
 const rockButton = document.querySelector('#rock');
 rockButton.addEventListener('click', () => {
 
@@ -103,8 +106,7 @@ function oneRound(computerChoice, playerChoice)
     computerChoice = getComputerChoice();
     //playerChoice = getPlayerChoice();
 
-    computerWins = 0;
-    playerWins = 0;
+
 
    /* if (playerChoice = rock && computerChoice == rock)
     {
@@ -119,15 +121,21 @@ function oneRound(computerChoice, playerChoice)
         return "Tie";
     } */
 
-    console.log(playerChoice);
-    console.log(computerChoice);
+    //console.log(playerChoice);
+    //console.log(computerChoice);
+
+
+    if(playerScore == 5 || computerScore == 5)
+    {
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
+    }
 
     if (playerChoice == rock && computerChoice == paper)
     {
-        computerWins = 1;
-        playerWins = 0;
+        computerScore++;
+        
 
-
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Computer wins! Paper beats rock!";
         return "Computer wins! Paper beats rock!";
 
@@ -137,9 +145,10 @@ function oneRound(computerChoice, playerChoice)
     else if (playerChoice == rock && computerChoice == scissors)
     {
 
-        computerWins = 0;
-        playerWins = 1;
 
+        playerScore++;
+
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "You win! Rock beats scissors!";
         return "You win! Rock beats scissors!";
 
@@ -147,9 +156,7 @@ function oneRound(computerChoice, playerChoice)
     else if (playerChoice == rock && computerChoice == rock)
     {
 
-        computerWins = 0;
-        playerWins = 0;
-
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Tie";
         return "Tie";
 
@@ -157,9 +164,9 @@ function oneRound(computerChoice, playerChoice)
     }
     else if (playerChoice == paper && computerChoice == scissors)
     {
-        computerWins = 1;
-        playerWins = 0;
+        computerScore++;
 
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Computer wins! Scissors beats paper!";
         return "Computer wins! Scissors beats paper!";
 
@@ -168,9 +175,10 @@ function oneRound(computerChoice, playerChoice)
     else if (playerChoice == paper && computerChoice == rock)
     {
 
-        computerWins = 0;
-        playerWins = 1;
 
+        playerScore++;
+
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "You win! Paper beats rock!";
         return "You win! Paper beats rock!";
 
@@ -178,17 +186,17 @@ function oneRound(computerChoice, playerChoice)
     }
     else if (playerChoice == paper && computerChoice == paper)
     {
-        computerWins = 0;
-        playerWins = 0;
 
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Tie!";
         return "Tie";
     }
     else if (playerChoice == scissors && computerChoice == paper)
     {
-        computerWins = 0;
-        playerWins = 1;
 
+        playerScore++;
+
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "You win! Scissors beats paper!";
         return "You win! Scissors beats paper!";
 
@@ -196,18 +204,16 @@ function oneRound(computerChoice, playerChoice)
     else if (playerChoice == scissors && computerChoice == rock)
     {
 
-        computerWins = 1;
-        playerWins = 0;
+        computerScore++;
 
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Computer wins! Rock beats scissors!";
         return "Computer wins! Rock beats scissors!";
   
     }
     else if (playerChoice == scissors && computerChoice == scissors)
     {
-        computerWins = 0;
-        playerWins = 0;
-
+        scoreTally.textContent = playerScore + " vs " + computerScore ;
         resultsDisplay.textContent = "Tie!";
         return "Tie";
     }
@@ -239,10 +245,12 @@ function Game()
         if (playerWins == 1)
         {
             playerScore++;
+            scoreTally.textContent = playerScore + " vs " + computerScore ;
         }
         else if (computerWins == 1)
         {
             computerScore++;
+            scoreTally.textContent = playerScore + " vs " + computerScore ;
         }
 
 
